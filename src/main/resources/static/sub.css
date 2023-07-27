@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/* 공통 css 처리*/
+*{box-sizing: border-box;font-family: "Pretendard";}
+	html, body, div, header, nav, section, aside, article, footer, figure, 
+	figcaption, fieldset, legend, ul, ol, li, dl, dt, dd, h1, h2, h3, p {
+	    margin:  0;
+	    padding: 0;
+	}
+	ul {
+	    list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+/*-------------------- private 시작----------------------------*/
+.make {
+	display: flex;
+	padding: 50px;
+	justify-content: center;
+}
+
+.name {
+	margin-right: 10px;
+}
+.makeUl {
+	display: flex;
+}
+.makeUl>li {
+	padding-left: 100px ;
+}
+
+.gra {
+	padding: 50px;
+	border: 1px solid black;
+}
+.flexgra {
+	display: flex;
+	justify-content: center;
+}
+.btnbord {
+	width: 100px;
+	border: none;
+	margin-left: 20px;
+}
+.buttonContainer {
+	padding-top: 20px;
+}
+#button1 {
+	display: block;
+	width: 100px;
+	height: 70px;
+	border: none;
+	border-radius: 0.375rem;
+}
+#button2 {
+	display: block;
+	width: 100px;
+	height: 70px;
+	border: none;
+	margin-top: 20px;
+	border-radius: 0.375rem;
+}
+#button3 {
+	width: 100px;
+	height: 70px;
+	border: none;
+	margin-top: 20px;
+	border-radius: 0.375rem;
+}
+
+
+/*-------------------- info 시작----------------------------*/
+.selectline {
+	text-align: center;
+	padding: 50px 50px 0 50px;
+}
+.boxline {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.gamesu {
+	width: 200px;
+	height: 30px;
+	text-align: center;
+}
+.imageline {
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+}
+.graline {
+	text-align: center;
+}
+.tableline {
+	text-align: center;
+}
+/*tbody tr:first-child {
+	position: fixed;
+}*/
+.tableline th{
+	padding: 5px 10px;
+	background: #134aa9;
+    color: #fff;
+    font-weight: 700;
+}
+.tableline td{
+	padding: 5px 10px;
+	border-bottom: 1px solid #2a2e35;
+}
+
+
+.imgline {
+	text-align: left;
+	padding: 20px;
+}
+
+.playerimg {
+	width: 150px;
+	max-width: 150px;
+}
+.playn {
+	font-size: 20px;
+	padding-left: 25px;
+}
+
+/********************* 동먕이인div *********************/
+
+
+.aline {
+	padding-right: 50px;
+}
+.thumbnail{
+	display: flex;
+	margin: -30px;
+}
+.thumbnail>li {
+	min-width: 25%;
+	padding: 30px;
+}
+.thumbnail>li .playerimg {
+	width: 100%;
+	max-width: 100%;
+}
+.thumbnail>li .playn {
+	display: block;
+	padding-top: 20px;
+	text-align: center;
+	color: #2a2e35;
+}
+/********************* 라인그래프 *********************/
+.linegraph {
+	margin-top: -120px;
+}
+.no123 {
+	text-align: center;
+	font-size: 24px;
+}
+.clickimg {
+	font-size: 24px;
+}
+/********************* private그래프 *********************/

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 설정된 메서드들을 처리함 DAO연결잘못하면 서버가 안열림-->
+<mapper namespace="com.project.ai.ProjectService">
+      
+   <!-- <insert id="info"
+   		parameterType="com.project.ai.TestDto">
+        INSERT INTO tomorrow_lineup values (#{idx}, #{name}, #{backnum})
+   </insert> -->
+   
+   <select id="select"  resultType="com.project.ai.LineupDTO">
+   		select tp.*, t1.teamNameK, t2.teamNameK as teamNameK2 from tomorrow_lineup tp
+   		inner join team t1 on t1.teams_aw = tp.teams_aw 
+   		inner join team t2 on t2.teams_hm = tp.teams_hm
+   		order by idx
+   </select>
+   
+   <select id="playerSelectName" parameterType="com.project.ai.PlayerDTO" resultType="com.project.ai.PlayerDTO">
+   		select * from db_player where code=#{code}
+   </select>
+   
+   <select id="Selectpit" parameterType="com.project.ai.PlayerDTO" resultType="com.project.ai.PitDTO">
+   		select pt.* , name from db_pit pt
+   		inner join db_player pr
+   		on pt.code = pr.code
+   		where pt.code=#{code}
+   </select>
+   
+   <select id="Selecthit" parameterType="com.project.ai.PlayerDTO" resultType="com.project.ai.HitDTO">
+   		select pt.* , name from db_hit pt
+   		inner join db_player pr
+   		on pt.code = pr.code
+   		where pt.code=#{code}
+   </select>
+   
+	<select id="playerCodeS" parameterType="com.project.ai.PlayerDTO" resultType="com.project.ai.PlayerDTO">
+		select * from db_player where name=#{name}
+	</select>
+	
+	<select id="getRecentPitData" parameterType="String" resultType="com.project.ai.PitRecentTotalDTO">
+         select * from pit_recent where code=#{playerCode}          
+   </select>
+   
+   <select id="getTotalPitData" parameterType="String" resultType="com.project.ai.PitRecentTotalDTO">
+         select * from pit_total where code=#{playerCode}         
+   </select>
+   
+   <select id="getRecentHitData" parameterType="String" resultType="com.project.ai.HitRecentTotalDTO">
+         select * from hit_recent where code=#{playerCode}        
+   </select>
+   
+   <select id="getTotalHitData" parameterType="String" resultType="com.project.ai.HitRecentTotalDTO">
+         select * from hit_total where code=#{playerCode}       
+   </select>
+   
+   <select id="getHitSeasonData" parameterType="String" resultType="com.project.ai.Hit_seasonDTO">
+   		select * from hit_season where code=#{playerCode} order by year 
+   </select>
+   
+   <select id="getPitSeasonData" parameterType="String" resultType="com.project.ai.Pit_seasonDTO">
+   		select * from pit_season where code=#{playerCode} order by year 
+   </select>
+   
+   <!-- private -->
+   <select id="hitCompare" parameterType="java.util.List" resultType="com.project.ai.HitRecentTotalDTO">
+      SELECT ht.*, name FROM hit_total ht 
+      inner join db_player dp on ht.code = dp.code
+      WHERE ht.code IN
+        <foreach item="graphData" collection="list" separator="," open="(" close=")">
+            #{graphData}
+        </foreach>
+        ORDER BY FIELD(ht.code,
+           <foreach item="graphData" collection="list" separator=",">
+                #{graphData}
+            </foreach>
+        );
+   </select>
+   
+   <select id="pitCompare" parameterType="java.util.List" resultType="com.project.ai.PitRecentTotalDTO">
+      SELECT pt.*, name FROM pit_total pt
+      inner join db_player dp on pt.code = dp.code
+      WHERE pt.code IN
+        <foreach item="graphData" collection="list" separator="," open="(" close=")">
+            #{graphData}
+        </foreach>
+        ORDER BY FIELD(pt.code,
+           <foreach item="graphData" collection="list" separator=",">
+                #{graphData}
+            </foreach>
+        );
+   </select>
+   
+</mapper>

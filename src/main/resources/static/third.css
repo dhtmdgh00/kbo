@@ -1,0 +1,523 @@
+@charset "UTF-8";
+/* 웹폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+/* 공통 css 처리*/
+*{box-sizing: border-box;/*font-family: "Pretendard";*/ font-family: 'Orbit', sans-serif;}
+	html, body, div, header, nav, section, aside, article, footer, figure, 
+	figcaption, fieldset, legend, ul, ol, li, dl, dt, dd, h1, h2, h3, p {
+	    margin:  0;
+	    padding: 0;
+	}
+	ul {
+	    list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+body{font-family: 'Orbit', sans-serif;}
+a:hover{color: inherit;}
+
+
+.container-fluid.lr-pd0{padding-left: 0 !important;padding-right:0 !important;}
+
+/* header 처리*/	
+.logo {
+	padding: 10px 50px;
+}
+.logoimg {
+	display: inline-block;
+	width: 250px;	
+}
+.logoimg>img {
+	display: inline-block;
+	width: 100%;
+	
+}
+.backbg {
+	background-color: #134aa9;
+}
+.info {
+	height: 100px;
+	padding: 30px 50px;
+	display: flex;
+}
+.info>li {
+	font-size: 24px;
+	font-weight: 700;
+	padding-right: 50px;
+}
+.info>li a:hover{color: #fff;}
+/* header 종료*/
+/* content 시작*/
+/* 오늘의 경기 시작*/
+.btnpadding {
+	padding-top: 80px;
+}
+.btn-group a.btnHeight {
+	color: black;
+	width: 256px;
+	padding: 20px 40px;
+	margin-right: 10px;
+	font-size: 24px;
+	font-weight: 700;
+    background: #eff4fe;
+    border-radius: 10px !important;
+    box-shadow: none;
+}
+.btngr1 {
+	text-align: center;
+}
+/* 오늘의 경기 종료*/
+/* 오늘의 경기 클릭후 화면 시작*/
+.btngr2 {
+	margin-top: 50px;
+	text-align: center;
+}
+.btngame {
+	font-size: 24px;
+	width: 100%;
+	height: 200px;
+	line-height: 200px;
+	border: 1px solid black;
+}
+/* 키플레이어, 선수명단 시작*/
+.gameKey {
+	text-align: center;
+}
+.homeKey {
+	text-align: right;
+	font-size: 21px;
+}
+.keydiv {
+	padding-top: 50px;
+	display: flex;
+    justify-content: space-around;
+}
+.keydiv ul>li {
+	text-align: center;
+	min-width: 200px;
+	font-size: 21px;
+	padding:10px 15px;
+}
+.keydiv ul>li:first-child{
+	background: #134aa9;
+	color: #fff;
+	font-weight: 700;
+}
+.keydiv ul>li + li{border-bottom: 1px solid #000;}
+.playinfo {
+	padding: 50px 0;
+	font-size: 40px;
+	color: #2a2e35;
+	font-weight: 700;
+}
+table{
+	width: 100%;
+}
+tr {
+	width: 100%;
+	text-align: center;
+}
+.infoth {
+	background-color: #f9f9f9;
+}
+.infohr {
+	border: 1px solid;
+	border-top: 1px solid ;
+}
+.infoTable tr td{
+	display: inline-block;
+}
+.homeinfo {
+	width: 45%;
+}
+
+.gamevs {
+	width: 10%;
+	border: 1px solid black;
+}
+.awayinfo {
+	width: 45%;
+	border: 1px solid black;
+}
+.awayinfo>ul>li {
+	font-size: 24px;
+}
+
+/*-------------------- 홈 / 어웨이 라인업*-----------/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+
+/* colour stuff */
+:root {
+  --white: #ffffff;
+  --lightBG: #dce1df;
+  --salmon: #ff6666;
+
+  --teal: #0096a0;
+  --tealMid: #0ebac7;
+  --tealContrast: #33ffff;
+  --tealShade: #007c85;
+
+  --darkGrey: #4f585e;
+}
+
+body {
+  color: var(--darkGrey);
+  font-family: 'Source Sans Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a.btn {
+  /*background: var(--teal);*/
+  background: #134aa9;
+  border-radius: 4px;
+  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+  color: var(--white);
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s 0s ease-out;
+}
+
+.no-touch a.btn:hover {
+  background: lighten(var(--teal), 2.5);
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+
+.no-touch a.btn:active,
+a.btn:active {
+  background: darken(var(--teal), 2.5);
+  box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.25);
+  transform: translate3d(0, 1px, 0);
+  transition: all 0.025s 0s ease-out;
+}
+
+div.cards {
+  margin: 20px auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+div.card {
+  background: var(--white);
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 90%;
+  z-index: 1;
+}
+
+div.card img {
+  max-width: 300px;
+}
+
+div.card .card__image-holder {
+  /*background: rgba(0, 0, 0, 0.1);
+  height: 0;
+  padding-bottom: 45%;*/
+}
+
+div.card div.card-title {
+  /*background: var(--white);*/
+  padding: 6px 15px 10px;
+  position: relative;
+  z-index: 0;
+}
+
+div.card div.card-title a.toggle-info {
+  border-radius: 32px;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 32px;
+}
+
+div.card div.card-title a.toggle-info span {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 16px;
+  transition: all 0.15s 0s ease-out;
+  width: 12px;
+}
+
+div.card div.card-title a.toggle-info span.left {
+  right: 14px;
+  transform: rotate(45deg);
+}
+
+div.card div.card-title a.toggle-info span.right {
+  left: 14px;
+  transform: rotate(-45deg);
+}
+
+div.card div.card-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0;
+  padding: 0;
+}
+
+div.card div.card-title h2 small {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+div.card div.card-description {
+  padding: 0 15px 10px;
+  position: relative;
+  font-size: 14px;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-top: 0px;
+  border-bottom: 0px;
+  margin-right: -1px;
+  margin-left: -1px;
+  width: calc(100% + 2px);
+}
+
+div.card div.card-actions {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.075);
+  padding: 10px 15px 20px;
+  text-align: center;
+}
+
+div.card div.card-flap {
+  background: darken(var(--white), 15);
+  position: absolute;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+}
+
+div.card div.flap1 {
+  transition: all 0.3s 0.3s ease-out;
+  z-index: -1;
+}
+
+div.card div.flap2 {
+  transition: all 0.3s 0s ease-out;
+  z-index: -2;
+}
+
+div.cards.showing div.card {
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.88);
+}
+
+.no-touch div.cards.showing div.card:hover {
+  opacity: 0.94;
+  transform: scale(0.92);
+}
+
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+div.card.show div.card-title a.toggle-info {
+  background: var(--salmon) !important;
+}
+
+div.card.show div.card-title a.toggle-info span {
+  top: 15px;
+}
+
+div.card.show div.card-title a.toggle-info span.left {
+  right: 10px;
+}
+
+div.card.show div.card-title a.toggle-info span.right {
+  left: 10px;
+}
+
+div.card.show div.card-flap {
+  background: var(--white);
+  transform: rotateX(0deg);
+  margin-top: -5px;
+}
+
+div.card.show div.flap1 {
+  transition: all 0.3s 0s ease-out;
+}
+
+div.card.show div.flap2 {
+  transition: all 0.3s 0.2s ease-out;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-top: 0;
+  border-bottom-left-radius: var(--bs-card-border-radius);
+  border-bottom-right-radius: var(--bs-card-border-radius);
+  margin-right: -1px;
+  margin-left: -1px;
+  width: calc(100% + 2px);
+}
+
+.infoimgText {
+	display: flex;
+	justify-content: flex-start;	
+}
+.infoName {
+	font-size: 21px;
+	font-weight: 700;
+	padding-top: 20px;
+	padding-left: 20px;	
+}
+
+.loading{
+	text-align: center;
+	border-left: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-right: var(--bs-card-border-width) solid var(--bs-card-border-color);
+}
+.loading img{}
+
+/*---------------- 팀 로고------------------*/
+
+.vsimg {
+	display: flex;
+	justify-content: center;
+}
+
+.vsimg>.imglogo {
+	padding: 20px;
+}
+.vsimg>.imglogo img{
+	display: block;
+}
+.vsimg>.imglogo span{
+	display: block;
+	padding-top: 10px;
+	font-size: 25px;
+	font-weight: 700;
+	color: #2a2e35;
+}
+
+.plotly {
+	border-left: var(--bs-card-border-width) solid var(--bs-card-border-color);
+	border-right: var(--bs-card-border-width) solid var(--bs-card-border-color);
+	margin-left: 0.5px;
+	margin-right: 0.5px;
+}
+.vs {
+	padding-top: 75px;
+}
+.comparaison .middle,
+.latestGame .middle{
+	font-weight: 700;
+	color: #2a2e35;
+}
+.comparaison {
+	display: flex;
+	justify-content: center;
+	font-size: 21px;
+}
+
+.comparaison>li+li {
+	padding-left: 30px;
+}
+.latestGame{
+	display: flex;
+	justify-content: center;
+	font-size: 21px;
+}
+.latestGame>li+li {
+	padding-left: 30px;
+}
+.red {
+	color: red;
+}
+.blue {
+	color: blue;
+}
+/*---------------- 팀 그래프 ------------------*/
+.pgra {
+	width: 100%;
+}
+.disnone {
+	
+}
+.fontli {
+	font-size: 15px;
+}
+.font12 {
+	font-size: 15px;
+	color: grey;
+}
+/*---------------- 경기없는 날 페이지------------------*/
+.nono {
+	width: 100%;
+}
+.pnodata {
+	width: 100%;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	padding: 30px;
+}
+
+.comment {
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	padding: 80px;
+}
+
+.update {
+	margin-right: 100px;
+	width: auto;
+    text-align: center;
+    padding: 30px;
+    width: 400px;
+    font-size: 25px;
+    color: gray;
+}
+.riggame {
+	color: gray;
+	font-size: 12px;
+}
+
+/* private modal 추가 */
+.modal {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(0, 0, 0, 0.7); /* 블러 효과를 위해 투명도 설정 */
+ 	 z-index: 9999; /* 모달을 가장 위로 오도록 z-index 설정 */
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.modal-content {
+	display: flex;
+	margin: 0 auto;
+	width: 1200px;
+  	background-color: #fff;
+  	padding: 20px;
+  	flex-direction: row;
+}
+.modal-content>.img {
+	display: inline-block;
+	margin-right: 20px;
+}
+.tableline.header_fix tbody tr:first-child{
+	position: sticky;
+    top: 0;
+}
